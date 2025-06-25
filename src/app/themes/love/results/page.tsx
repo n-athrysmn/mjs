@@ -3,7 +3,7 @@
 import ResultsPage from "@/components/Results";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const LoveResultPage = () => {
   const [cards, setCards] = useState<string[]>([]);
   const [random, setRandom] = useState<boolean>(false);
 
@@ -35,4 +35,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default LoveResultPage;

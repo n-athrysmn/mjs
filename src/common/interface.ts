@@ -29,6 +29,11 @@ export interface TarotCard {
   questions: string[];
 }
 
+export interface History {
+  role: string;
+  parts: { text: string }[];
+}
+
 export interface AIReadingProps {
   prompt?: string;
   data: {
@@ -42,7 +47,7 @@ export interface AIReadingProps {
     };
   };
   instruction?: string;
-  llmHistory?: any[];
+  llmHistory?: History[];
 }
 
 export type ColorsType = {

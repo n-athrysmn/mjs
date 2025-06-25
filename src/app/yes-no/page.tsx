@@ -1,10 +1,9 @@
 "use client";
 
 import PickCard from "@/components/PickCard";
-import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 
-const page = () => {
+const YesNoPage = () => {
   const [question, setQuestion] = useState<string>("");
   const [card, setCard] = useState<string>("");
 
@@ -23,7 +22,7 @@ const page = () => {
   const placeholder = useMemo(() => {
     const index = Math.floor(Math.random() * placeholders.length);
     return placeholders[index];
-  }, []);
+  }, [placeholders]);
 
   return (
     <>
@@ -54,4 +53,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default YesNoPage;

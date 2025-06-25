@@ -3,7 +3,7 @@
 import ResultsPage from "@/components/Results";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const HealthResultPage = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default HealthResultPage;

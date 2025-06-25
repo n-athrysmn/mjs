@@ -1,7 +1,6 @@
 "use client";
 
 import { ColorsType } from "@/common/interface";
-import Link from "next/link";
 import React, {
   Dispatch,
   MouseEvent,

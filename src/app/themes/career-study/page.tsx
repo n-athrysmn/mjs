@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineSchool } from "react-icons/md";
 import { PiSuitcaseSimpleFill } from "react-icons/pi";
 
-const page = () => {
+const CareerStudyPage = () => {
   const [card, setCard] = useState<string>("");
   const [colors, setColors] = useState<ColorsType>({
     from: "slate-900",
@@ -69,4 +69,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CareerStudyPage;

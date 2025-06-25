@@ -5,7 +5,7 @@ import ResultsPage from "@/components/Results";
 import { Tarot } from "@/components/TarotData";
 import React, { useEffect, useState } from "react";
 
-const Page = () => {
+const DailyPage = () => {
   const [randomCard, setRandomCard] = useState<TarotCard | null>(null);
 
   useEffect(() => {
@@ -16,13 +16,11 @@ const Page = () => {
 
   if (!randomCard) return null;
 
-  console.log(randomCard);
-
   const prompt = `Provide a personalized and insightful tarot reading for the card ${randomCard.name}, as a JSON array of objects. Each object should have two properties: 'card' (the name of the tarot card) and 'interpretation' (the reading for that specific card). Focus on interpreting the meaning for guidance, reflection, and potential future influences. Make each interpretation mystical and encouraging.`;
 
   return (
     <>
-      <h3 className='text-white text-xl uppercase m-10 text-center'>
+      <h3 className="m-10 text-center text-xl uppercase text-white">
         Your Daily Reading
       </h3>
       <ResultsPage prompt={prompt} />
@@ -30,4 +28,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default DailyPage;

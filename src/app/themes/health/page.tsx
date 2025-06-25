@@ -7,7 +7,7 @@ import ThemeTitle from "@/components/ThemeTitle";
 import React, { useEffect, useState } from "react";
 import { GiHealing } from "react-icons/gi";
 
-const page = () => {
+const HealthPage = () => {
   const [card, setCard] = useState<string>("");
   const [colors, setColors] = useState<ColorsType>({
     from: "slate-900",
@@ -59,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default HealthPage;

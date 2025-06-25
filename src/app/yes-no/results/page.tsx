@@ -3,7 +3,7 @@
 import ResultsPage from "@/components/Results";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const YesNoResultPage = () => {
   const [cards, setCards] = useState<string>("");
   const [question, setQuestion] = useState<string>("");
 
@@ -30,4 +30,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default YesNoResultPage;

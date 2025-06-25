@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MainLayout from "../components/MainLayout";
-import Stars from "@/components/Stars";
 import { ReactNode, Suspense } from "react";
 import Loading from "./loading";
-import Controls from "@/components/Controls";
 
 export const metadata: Metadata = {
   title: "mjaynsurreptitious",

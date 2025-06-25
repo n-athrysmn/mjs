@@ -32,8 +32,6 @@ const MainLayout = ({
 
   if (!checkedStorage) return null;
 
-  console.log(colors);
-
   return (
     <>
       {welcomed ? (

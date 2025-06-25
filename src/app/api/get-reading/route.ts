@@ -4,18 +4,11 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const data: AIReadingProps = await req.json();
-  console.log("api running");
-  console.log("req", req);
-  console.log("data", data);
   const apiKey = GEMINI_API_KEY;
   const apiUrl = GEMINI_API_URL;
   let chatHistory = [];
   let schema = {};
   let instruction = "";
-  console.log("prompt:", data.prompt);
-  console.log("llmHistory:", data.llmHistory);
-  console.log("typeof llmHistory:", typeof data.llmHistory);
-  console.log("isArray:", Array.isArray(data.llmHistory));
 
   if (data.prompt && !data.llmHistory) {
     chatHistory = [

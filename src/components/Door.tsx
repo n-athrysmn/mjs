@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import Stars from "./Stars";
 import Image from "next/image";
 
@@ -32,14 +32,14 @@ const Door = ({ setOpen }: DoorProps) => {
             alt="logo"
             width={100}
             height={100}
-            className="motion-opacity-in-0 motion-translate-y-in-100 motion-blur-in-md"
+            className="motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0"
           />
-          <h1 className="motion-opacity-in-0 motion-translate-y-in-100 motion-blur-in-md text-center text-2xl uppercase text-white">
+          <h1 className="text-center text-2xl uppercase text-white motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0">
             <span className="opacity-70">Welcome to</span> MJAYNSurreptitious
           </h1>
         </div>
         <button
-          className="motion-opacity-in-0 motion-translate-y-in-100 motion-blur-in-md w-auto max-w-xs rounded bg-gray-800/40 p-5 text-white"
+          className="w-auto max-w-xs rounded bg-gray-800/40 p-5 text-white motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0"
           onClick={toggle}
         >
           Click to start

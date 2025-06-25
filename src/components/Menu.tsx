@@ -12,7 +12,7 @@ type MenuProps = {
 };
 
 const Menu = ({ data, sub, setCard }: MenuProps) => {
-  let topRow: Menus[][] = [];
+  const topRow: Menus[][] = [];
   let chunkSize;
 
   if (data.length < 6 && data.length % 2 !== 0) {
@@ -79,7 +79,7 @@ const Menu = ({ data, sub, setCard }: MenuProps) => {
     ));
 
   const renderInline = (items: Menus[]) =>
-    items.map((item, i) => (
+    items.map((item) => (
       <li
         key={item.label}
         className="flex h-80 w-64 cursor-pointer items-center justify-center rounded-md bg-cover bg-center text-white drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(0,0,0,0.4)] md:hover:text-[#ecc889]"

@@ -18,7 +18,7 @@ interface Message extends History {
   cards?: AICards[];
 }
 
-const page = () => {
+const AITarotPage = () => {
   const [history, setHistory] = useState<History[]>([]);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState<string>("");
@@ -43,8 +43,6 @@ const page = () => {
       })),
       { role: "user", parts: [{ text: input }] },
     ];
-
-    console.log("llm:", chatHistoryForLLM);
 
     const payload = {
       responseSchema: {
@@ -82,14 +80,11 @@ const page = () => {
       });
 
       const data = JSON.parse(res.data);
-      console.log("raw: ", data);
       const { message, cards } = data[0].reply;
-      console.log("AI Response Data:", data[0].reply);
-      console.log("AI Response Message:", cards);
 
       let aiMessage: Message = { sender: "model", content: "" };
       let aiHistory: History = { sender: "model", content: "" };
-      let combinedString = "";
+      let combinedString: string = "";
 
       if (!cards) {
         aiMessage = { sender: "model", content: message };
@@ -106,6 +101,7 @@ const page = () => {
       setMessages((prev) => [...prev, aiMessage]);
       setHistory((prev) => [...prev, aiHistory]);
     } catch (error) {
+      console.error(error);
       setMessages((prev) => [
         ...prev,
         { sender: "model", content: "Error retrieving response." },
@@ -128,9 +124,6 @@ const page = () => {
     setMessages([]);
     setHistory([]);
   };
-
-  console.log("history:", history);
-  console.log("Messages:", messages);
 
   function parseEmphasis(rawText: string) {
     const text = rawText.replace(/^\*\s*(?=\*\*)/gm, "");
@@ -231,4 +224,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AITarotPage;

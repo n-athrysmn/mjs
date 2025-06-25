@@ -44,8 +44,6 @@ const ExplainCards = ({ prompt }: ExplainCardsProps) => {
       { role: "user", parts: [{ text: content }] },
     ];
 
-    console.log("llm:", chatHistoryForLLM);
-
     const payload = {
       responseSchema: {
         type: "ARRAY",
@@ -82,10 +80,7 @@ const ExplainCards = ({ prompt }: ExplainCardsProps) => {
       });
 
       const data = JSON.parse(res.data);
-      console.log("raw: ", data);
       const { message, cards } = data[0].reply;
-      console.log("AI Response Data:", data[0].reply);
-      console.log("AI Response Message:", cards);
 
       let aiMessage: Message = { sender: "model", content: "" };
       let aiHistory: History = { sender: "model", content: "" };
@@ -106,6 +101,7 @@ const ExplainCards = ({ prompt }: ExplainCardsProps) => {
       setMessages((prev) => [...prev, aiMessage]);
       setHistory((prev) => [...prev, aiHistory]);
     } catch (error) {
+      console.error(error);
       setMessages((prev) => [
         ...prev,
         { sender: "model", content: "Error retrieving response." },
@@ -123,8 +119,6 @@ const ExplainCards = ({ prompt }: ExplainCardsProps) => {
     await handleUserMessage(input);
     setInput("");
   };
-
-  console.log(prompt);
 
   const promptSentRef = useRef(false);
 

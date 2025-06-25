@@ -1,6 +1,6 @@
 "use client";
 
-import { Menus, TarotCard } from "@/common/interface";
+import { TarotCard } from "@/common/interface";
 import { Tarot } from "@/components/TarotData";
 import Link from "next/link";
 import React from "react";
@@ -25,13 +25,13 @@ const page = () => {
   const mobSwordsRows = chunkCards(swords, 2);
   const mobCoinsRows = chunkCards(coins, 2);
 
-  const suits = {
-    major,
-    cups,
-    wands,
-    swords,
-    coins,
-  };
+  // const suits = {
+  //   major,
+  //   cups,
+  //   wands,
+  //   swords,
+  //   coins,
+  // };
 
   function chunkCards(cards: TarotCard[], size: number): TarotCard[][] {
     const chunks: TarotCard[][] = [];

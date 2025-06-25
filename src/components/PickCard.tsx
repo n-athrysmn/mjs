@@ -5,6 +5,7 @@ import { Tarot } from "./TarotData";
 import { useRouter } from "next/navigation";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import Loading from "../app/loading";
+import { TarotCard } from "@/common/interface";
 
 type PickCardProps = {
   limit: string;
@@ -37,7 +38,7 @@ const PickCard = (props: PickCardProps) => {
       ),
   );
 
-  const shuffleArray = (array: any[]) => {
+  const shuffleArray = <T,>(array: T[]): T[] => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -46,7 +47,7 @@ const PickCard = (props: PickCardProps) => {
   };
 
   const remainingTarots = Tarot.filter(
-    (card: any) => !selectedCards.includes(card.name),
+    (card: TarotCard) => !selectedCards.includes(card.name),
   );
 
   const shuffledTarot = shuffleArray(remainingTarots);

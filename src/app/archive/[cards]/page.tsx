@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { FaCaretRight } from "react-icons/fa";
 
-const page = () => {
+const ArchiveCardPage = () => {
   const pathname = usePathname();
 
   const pathSegments = pathname.split("/").filter(Boolean);
@@ -113,4 +113,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ArchiveCardPage;

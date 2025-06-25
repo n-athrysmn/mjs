@@ -75,8 +75,6 @@ const Nav = () => {
   const currentMenu = MainNavItem.find((item) => item.href === main);
   const currentSubMenu = SubNavItem.find((item) => item.href === sub);
 
-  console.log(main, sub);
-
   return (
     <>
       {pathSegments.length > 0 ? (

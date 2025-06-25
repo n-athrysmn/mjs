@@ -55,7 +55,6 @@ const ResultsPage = (data: ResultsPageProps) => {
           const response = await getAIReading({ prompt, data: payload });
 
           setReadings(JSON.parse(response.data));
-          console.log(response);
         } catch (error) {
           console.error("Error fetching fortune telling:", error);
           setError(true);
@@ -86,8 +85,6 @@ const ResultsPage = (data: ResultsPageProps) => {
     }
   }, [readings]);
 
-  console.log(readings);
-
   return loading ? (
     <Loading />
   ) : (
@@ -110,8 +107,6 @@ const ResultsPage = (data: ResultsPageProps) => {
               readings.findIndex(
                 (item) => item.card.toLowerCase() === read.card.toLowerCase(),
               ) === index;
-
-            console.log(card);
 
             return (
               <div
@@ -165,9 +160,9 @@ const ResultsPage = (data: ResultsPageProps) => {
             the AI, <br />
             please pick another card and try again ~ <br />{" "}
             <span className="text-sm">
-              If you're still seeing this error after another attempt, please
-              try again sometime. (Our AI might be busy <LiaPrayingHandsSolid />
-              )
+              If you&apos;re still seeing this error after another attempt,
+              please try again sometime. (Our AI might be busy{" "}
+              <LiaPrayingHandsSolid />)
             </span>
           </p>
         </div>

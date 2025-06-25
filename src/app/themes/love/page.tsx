@@ -8,7 +8,7 @@ import ThemeTitle from "@/components/ThemeTitle";
 import React, { useEffect, useState } from "react";
 import { TbHeartQuestion } from "react-icons/tb";
 
-const page = () => {
+const LovePage = () => {
   const [done, setDone] = useState<boolean>(false);
   const [random, setRandom] = useState<boolean | null>(null);
   const [card, setCard] = useState<string>("");
@@ -51,8 +51,6 @@ const page = () => {
     }
   }, []);
 
-  console.log(done);
-
   return (
     <>
       {card ? (
@@ -91,4 +89,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default LovePage;

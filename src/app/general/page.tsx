@@ -7,7 +7,7 @@ import ThemeTitle from "@/components/ThemeTitle";
 import React, { useEffect, useState } from "react";
 import { TbCrystalBall } from "react-icons/tb";
 
-const page = () => {
+const GeneralPage = () => {
   const [card, setCard] = useState<string>("");
   const [colors, setColors] = useState<ColorsType>({
     from: "slate-900",
@@ -63,4 +63,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default GeneralPage;

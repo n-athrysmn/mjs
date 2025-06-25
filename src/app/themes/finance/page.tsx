@@ -7,7 +7,7 @@ import ThemeTitle from "@/components/ThemeTitle";
 import React, { useEffect, useState } from "react";
 import { GiTakeMyMoney } from "react-icons/gi";
 
-const page = () => {
+const FinancePage = () => {
   const [card, setCard] = useState<string>("");
   const [colors, setColors] = useState<ColorsType>({
     from: "slate-900",
@@ -63,4 +63,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default FinancePage;
