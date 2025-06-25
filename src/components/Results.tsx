@@ -64,7 +64,7 @@ const ResultsPage = (data: ResultsPageProps) => {
       };
       fetchFortuneTelling();
     }
-  }, [cards.length]);
+  }, [cards.length, prompt]);
 
   function parseEmphasis(text: string) {
     const parts = text.split(/(\*[^*]+\*)/g);

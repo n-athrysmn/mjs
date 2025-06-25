@@ -93,7 +93,9 @@ const AITarotPage = () => {
         aiMessage = { sender: "model", content: message, cards: cards };
         combinedString = [
           message,
-          ...cards.map((card: any) => `${card.name}: ${card.interpretation}`),
+          ...cards.map(
+            (card: AICards) => `${card.name}: ${card.interpretation}`,
+          ),
         ].join(" ");
         aiHistory = { sender: "model", content: combinedString };
       }

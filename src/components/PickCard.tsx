@@ -58,6 +58,7 @@ const PickCard = (props: PickCardProps) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (selectedCards.length === parseInt(limit, 10)) {
       localStorage.setItem("selectedCards", JSON.stringify(selectedCards));
@@ -68,7 +69,7 @@ const PickCard = (props: PickCardProps) => {
         navigate.push(`/${path}/results`);
       }
     }
-  }, [selectedCards, limit]);
+  }, [selectedCards, limit, path, themes]);
 
   const scrollToBottom = () => {
     window.scrollTo({

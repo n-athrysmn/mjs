@@ -93,7 +93,9 @@ const ExplainCards = ({ prompt }: ExplainCardsProps) => {
         aiMessage = { sender: "model", content: message, cards: cards };
         combinedString = [
           message,
-          ...cards.map((card: any) => `${card.name}: ${card.interpretation}`),
+          ...cards.map(
+            (card: AICards) => `${card.name}: ${card.interpretation}`,
+          ),
         ].join(" ");
         aiHistory = { sender: "model", content: combinedString };
       }
@@ -122,6 +124,7 @@ const ExplainCards = ({ prompt }: ExplainCardsProps) => {
 
   const promptSentRef = useRef(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (prompt && !promptSentRef.current) {
       promptSentRef.current = true;

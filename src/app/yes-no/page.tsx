@@ -19,10 +19,11 @@ const YesNoPage = () => {
     "What's on your mind?",
   ];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const placeholder = useMemo(() => {
     const index = Math.floor(Math.random() * placeholders.length);
     return placeholders[index];
-  }, [placeholders]);
+  }, []);
 
   return (
     <>
