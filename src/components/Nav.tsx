@@ -126,8 +126,13 @@ const Nav = () => {
           <Link href="/" className="mt-5 animate-pulse">
             <Image src="/logo.png" alt="logo" width={80} height={80} />
           </Link>
-          <p className="text-center text-xl uppercase tracking-widest text-white md:text-2xl">
+          <p className="hidden text-center text-xl uppercase tracking-widest text-white md:block md:text-2xl">
             <span className="opacity-70">Welcome to</span> MJAYNSurreptitious
+          </p>
+          <p className="block text-center text-xl uppercase tracking-widest text-white md:hidden md:text-2xl">
+            <span className="opacity-70">Welcome to</span>
+            <br />
+            MJAYNSurreptitious
           </p>
         </div>
       )}
