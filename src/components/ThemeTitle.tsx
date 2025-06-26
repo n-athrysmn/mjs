@@ -33,7 +33,7 @@ const ThemeTitle = ({ initialColors, theme, Icon, Icon2 }: TitleProps) => {
         <h1
           className={`text-shadow-lg text-lg uppercase tracking-wider text-white md:text-4xl`}
         >
-          Theme: {theme}
+          {theme.toLowerCase() === "download" ? "Download" : "Theme: " + theme}
         </h1>
         {Icon2 ? (
           <Icon2 className="animate-pulse text-xl text-white md:text-4xl" />

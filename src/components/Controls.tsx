@@ -1,6 +1,7 @@
 "use client";
 
 import { ColorsType } from "@/common/interface";
+import Link from "next/link";
 import React, {
   Dispatch,
   MouseEvent,
@@ -98,6 +99,7 @@ const Controls = ({ setTheme }: ControlProps) => {
                 {t.label}
               </li>
             ))}
+            <Link href="/downloads">Download Here ~</Link>
           </ul>
         </div>
       )}
