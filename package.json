@@ -2,11 +2,47 @@
   "name": "mjaynsurreptitious",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "electron-dev": "NODE_ENV=development electron main.js",
+    "electron": "electron main.js",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.athira.mjaynsurreptitious",
+    "productName": "mjaynsurreptitious",
+    "files": [
+      "**/*",
+      "!node_modules/.cache",
+      "!src",
+      "!*.log"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "icon": "icon.png",
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "icon": "icon.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "icon": "assets/favicon.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "category": "Utility"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.10",
@@ -22,6 +58,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.17",
+    "electron-builder": "^26.0.12",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "postcss": "^8.5.6",
