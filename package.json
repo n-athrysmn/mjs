@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "main": "main.js",
+  "description": "mjaynsurreptitious is an AI-powered tarot card reader",
+  "author": "Athira Kassim <athira.ysmn@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,7 +28,10 @@
     },
     "mac": {
       "icon": "icon.png",
-      "category": "public.app-category.utilities"
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
     "win": {
       "icon": "icon.png",
@@ -41,8 +46,7 @@
         "AppImage",
         "deb"
       ]
-    },
-    "category": "Utility"
+    }
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.10",
