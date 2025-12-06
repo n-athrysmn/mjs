@@ -3,6 +3,7 @@ import "./globals.css";
 import MainLayout from "../components/MainLayout";
 import { ReactNode, Suspense } from "react";
 import Loading from "./loading";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "mjaynsurreptitious",
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Suspense fallback={<Loading />}>
           <MainLayout>{children}</MainLayout>
         </Suspense>
+        <Analytics />
       </body>
     </html>
   );
